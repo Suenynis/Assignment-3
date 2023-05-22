@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"Assignment/pkg/store/postgres"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	db, err := postgres.ConnectDB("localhost", "5432", "postgres", "postgres", "greenlight")
+	if err != nil {
+		panic(err)
+	} else {
+		fmt.Println("Connected to database")
+	}
+	defer db.Close()
 }
