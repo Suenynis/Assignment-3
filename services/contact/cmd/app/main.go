@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	db, err := postgres.ConnectDB("localhost", "5432", "postgres", "postgres", "greenlight")
+	db, err := postgres.ConnectDB("localhost", "5432", "postgres", "postgres", "MIcroservices")
 	if err != nil {
 		panic(err)
 	} else {
